@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Utility">
+      <HintPath>..\..\Utility\Utility\bin\Debug\netstandard2.0\Utility.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
