@@ -24,19 +24,19 @@ namespace TestForm
             using (var fileOperation = new FileOperation.FileOperation(this.Handle))
             {
                 fileOperation.AddOperation(new CopyFileOperation(
-                    @"F:\My Files\Heroes of Might and Magic 3 Complete\H3MAPED.HLP",
-                    @"C:\Users\iseep\Desktop"
+                    @"D:\Program Files (x86)\3DO\Heroes 3 Complete\H3MAPED.HLP",
+                    @"D:\Desktop"
                 ));
                 fileOperation.AddOperation(new DeleteFileOperation(
-                    @"C:\Users\iseep\Desktop\h3ccmped.cnt"
+                    @"D:\Desktop\a.txt"
                 ));
                 fileOperation.AddOperation(new CopyFileOperation(
-                    @"F:\My Files\Heroes of Might and Magic 3 Complete\h3ccmped.cnt",
-                    @"C:\Users\iseep\Desktop"
+                    @"D:\Program Files (x86)\3DO\Heroes 3 Complete\h3ccmped.cnt",
+                    @"D:\\Desktop"
                 ));
                 fileOperation.AddOperation(new CopyFileOperation(
-                    @"F:\My Files\Heroes of Might and Magic 3 Complete\H3AB_Manual.pdf",
-                    @"C:\Users\iseep\Desktop"
+                    @"D:\Program Files (x86)\3DO\Heroes 3 Complete\H3AB_Manual.pdf",
+                    @"D:\Desktop"
                 ));
                 fileOperation.PerformOperations();
             }
