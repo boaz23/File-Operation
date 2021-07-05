@@ -1,5 +1,5 @@
 ﻿using System;
-using Utility.Collections.Generic;
+using System.Collections.Generic;
 
 namespace FileOperation
 {
@@ -7,7 +7,7 @@ namespace FileOperation
     {
         IntPtr OwnerWindowHandle { get; }
         FileOperationFlags OperationsFlags { get; set; }
-        NoNullsCollection<FileOperationItem> FileOperations { get; }
+        IList<FileOperationItem> FileOperations { get; }
 
         event EventHandler<FinishOperaionsEventArgs> OnOperationsFinish;
         event EventHandler<EventArgs> OnOperationsStart;

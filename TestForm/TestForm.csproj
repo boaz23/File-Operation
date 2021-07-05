@@ -44,7 +44,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Utility">
-      <HintPath>..\..\Utility\Utility\bin\Debug\netstandard2.0\Utility.dll</HintPath>
+      <HintPath>..\..\Utility\Utility\bin\Debug\netstandard2.1\Utility.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -83,7 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FileOperation\FileOperation.csproj">
-      <Project>{ED347652-C75B-40BD-8356-0BA8E4191A28}</Project>
+      <Project>{ed347652-c75b-40bd-8356-0ba8e4191a28}</Project>
       <Name>FileOperation</Name>
     </ProjectReference>
   </ItemGroup>

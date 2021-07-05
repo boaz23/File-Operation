@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Runtime.InteropServices;
 
 using FileOperation.Native.Types;
@@ -38,7 +39,7 @@ namespace FileOperation
 
         public FileOperation()
         {
-            this.FileOperations = new NoNullsCollection<FileOperationItem>();
+            this.FileOperations = new List<FileOperationItem>();
 
             this.fileOperation = new Native.Types.FileOperation();
             this.cookie = this.fileOperation.Advise(new FileOperationProgressSink(this));
@@ -47,7 +48,7 @@ namespace FileOperation
         public FileOperation(IntPtr ownerWindowHandle)
         {
             this.OwnerWindowHandle = ownerWindowHandle;
-            this.FileOperations = new NoNullsCollection<FileOperationItem>();
+            this.FileOperations = new List<FileOperationItem>();
 
             this.fileOperation = new Native.Types.FileOperation();
             this.fileOperation.SetOwnerWindow(ownerWindowHandle);
@@ -56,7 +57,8 @@ namespace FileOperation
 
         public IntPtr OwnerWindowHandle { get; }
         public FileOperationFlags OperationsFlags { get; set; }
-        public NoNullsCollection<FileOperationItem> FileOperations { get; }
+        public List<FileOperationItem> FileOperations { get; }
+        IList<FileOperationItem> IFileOperation.FileOperations => FileOperations;
 
         public event EventHandler<EventArgs> OnOperationsStart;
         public event EventHandler<FinishOperaionsEventArgs> OnOperationsFinish;
@@ -182,7 +184,7 @@ namespace FileOperation
         private static IShellItem CreateFolderShellItem(string path)
         {
             IShellItem shellItem;
-            path = FileSystem.GetFullPath(path);
+            path = Path.GetFullPath(path);
             if (FileSystem.DoesPathExist(path))
             {
                 shellItem = CreateShellItem(path);
@@ -212,7 +214,7 @@ namespace FileOperation
         private static IShellItem CreateShellItem(string path, IBindCtx bindCtx)
         {
             Guid riid = typeof(IShellItem).GUID;
-            path = FileSystem.GetFullPath(path);
+            path = Path.GetFullPath(path);
             return NativeMethods.SHCreateItemFromParsingName
             (
                 path,
