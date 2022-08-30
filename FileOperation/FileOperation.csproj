@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="Utility">
-      <HintPath>..\..\Utility\Utility\bin\Debug\net5.0\Utility.dll</HintPath>
+      <HintPath>..\..\Utility\Utility\bin\Debug\net6.0\Utility.dll</HintPath>
     </Reference>
   </ItemGroup>
 
