@@ -102,7 +102,7 @@ namespace FileOperation
             if (disposing)
             {
                 this.fileOperation.Unadvise(this.cookie);
-                Marshal.ReleaseComObject(this.fileOperation);
+                _ = Marshal.ReleaseComObject(this.fileOperation);
                 this.fileOperation = null;
             }
         }
